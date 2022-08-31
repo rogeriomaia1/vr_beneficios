@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    hostname: mysql
+    container_name: mysqlXX
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: miniautorizador
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      
+#  vr_beneficios:
+#    build:
+#      context: ./
+#      dockerfile: ./Dockerfile
+#    image: vr_beneficios/api
+#    container_name: vr_beneficios
+#    ports:
+#      - '8080:8080'
+#      - '5005:5005'
+#    environment:
+#      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
+#      - PROFILE=dev
+#    depends_on:
+#      - mysql
